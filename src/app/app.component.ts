@@ -15,32 +15,32 @@ class Item {
 @Component({
     selector: 'purchase-app',
     template: `<div class="page-header">
-        <h1> Список покупок </h1>
+        <h1> Purchase list </h1>
     </div>
     <div class="panel">
         <div class="form-inline">
             <div class="form-group">
                 <div class="col-md-8">
-                    <input class="form-control" [(ngModel)]="text" placeholder = "Название" />
-                </div>
+                    <input class="form-control" [(ngModel)]="text" placeholder = "Name" />
+                </div>                
             </div>
             <div class="form-group">
                 <div class="col-md-6">
-                    <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
+                    <input type="number" class="form-control" [(ngModel)]="price" placeholder="Price" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-8">
-                    <button class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
+                    <button class="btn btn-default" (click)="addItem(text, price)">Add</button>
                 </div>
             </div>
         </div>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Предмет</th>
-                    <th>Цена</th>
-                    <th>Куплено</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Sold</th>
                 </tr>
             </thead>
             <tbody>
@@ -58,10 +58,10 @@ class Item {
 export class AppComponent {
     items: Item[] =
         [
-            { purchase: "Хлеб", done: false, price: 15.9 },
-            { purchase: "Масло", done: false, price: 60 },
-            { purchase: "Картофель", done: true, price: 22.6 },
-            { purchase: "Сыр", done: false, price: 310 }
+            { purchase: "Bread", done: false, price: 15.9 },
+            { purchase: "Butter", done: false, price: 60 },
+            { purchase: "Potateos", done: true, price: 22.6 },
+            { purchase: "Cheese", done: false, price: 310 }
         ];
 
     addItem(text: string, price: number): void {
