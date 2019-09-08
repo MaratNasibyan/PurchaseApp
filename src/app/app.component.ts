@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import { ChildComponent } from './child-component'
 
 class Item {
     purchase: string;
@@ -50,8 +51,12 @@ class Item {
                     <td><input type="checkbox" [(ngModel)]="item.done" /></td>
                 </tr>
             </tbody>
-        </table>
-    </div>`
+        </table>     
+    </div>
+    <child-comp #counter></child-comp>
+    <button (click)="counter.increment()">+</button>
+    <button (click)="counter.decrement()">-</button>
+    `
 })
 
 
@@ -72,4 +77,6 @@ export class AppComponent {
 
         this.items.push(new Item(text, price))
     }
+
+   
 }
